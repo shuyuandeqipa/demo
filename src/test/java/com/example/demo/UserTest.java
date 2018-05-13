@@ -34,9 +34,9 @@ public class UserTest {
     public void testUserController() {
 
         boolean isok = this.controller.fullInfoRegister("9527", "男", "10086",
-                "9527", "10086", "1228436902@qq.com", "wjx.jpg",
+                "9527", "10086", "1008610086@qq.com", "wjx.jpg",
                 "我是最帅的", "硕士", "ZJU", "CS",
-                new Date(2019, 9, 1), new Date(2012, 6, 1));
+                new Date(2019, 9, 1), new Date(2022, 6, 1));
         if (isok == true) {
             System.out.println("register successfully!");
             ;
