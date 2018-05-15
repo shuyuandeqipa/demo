@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>uploadImage</title>
+
+
+</head>
+
+<body>
+<form enctype="multipart/form-data" method="post" action="/uploadImage">
+    <br><br>
+    需要上传的图片：<input type="file" name="file"/>
+    文件夹的名字:<input type="text" name="dirName"/>
+    <input type="submit" value=" 上     传 "/>
+    <br>
+    <br>例如：需要上传的图片:1.jpg
+    <br>文件夹的名字:temp
+    <br>保存到服务器的图片的路径是：E:\demo\src\main\resources\static\uploadImages\temp\1.jpg
+
+</form>
+</body>
+</html>
