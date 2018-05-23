@@ -6,6 +6,7 @@ import javax.persistence.*;
 import java.sql.Date;
 import java.util.Set;
 
+//需要安装lombok插件
 @Setter
 @Getter
 @Data
@@ -51,16 +52,14 @@ public class User {
     }
 }
 /**
- *
- *  @Getter和@Setter注解：注解在属性上，会自动在class字节码文件生成getter和setter方法
- @Data注解：注解在类上，会自动在字节码文件中为类所有的属性生成getter和setter方法，
- 以及equals，canEquals,hashCode和toString方法
- 除了以上介绍的@Getter，@Setter和@Data注解外，还提供如下注解：
- @NonNull：帮助我们避免空指针异常
- @ToString：自动生成toString方法
- @EqualsAndHashCode:自动生成equals和hashCode方法
- @Cleanup：自动帮我们调用close方法
- @Synchronized:自动给方法添加synchronize关键字
- @NoArgsConstructor：自动生成无参数构造函数
- @AllArgsConstructor：自动生成全参数构造函数
+ * @Getter和@Setter注解：注解在属性上，会自动在class字节码文件生成getter和setter方法
+ * @Data注解：注解在类上，会自动在字节码文件中为类所有的属性生成getter和setter方法， 以及equals，canEquals,hashCode和toString方法
+ * 除了以上介绍的@Getter，@Setter和@Data注解外，还提供如下注解：
+ * @NonNull：帮助我们避免空指针异常
+ * @ToString：自动生成toString方法
+ * @EqualsAndHashCode:自动生成equals和hashCode方法
+ * @Cleanup：自动帮我们调用close方法
+ * @Synchronized:自动给方法添加synchronize关键字
+ * @NoArgsConstructor：自动生成无参数构造函数
+ * @AllArgsConstructor：自动生成全参数构造函数
  */

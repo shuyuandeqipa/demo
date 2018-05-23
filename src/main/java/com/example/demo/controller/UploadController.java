@@ -9,20 +9,21 @@ import org.springframework.web.multipart.MultipartFile;
 @Controller
 @Slf4j
 public class UploadController {
+    //可以上传任何需要上传的文件
     //跳转到上传文件的页面
     @GetMapping("/upload")
     public String goUploadImg() {
         //跳转到 templates 目录下的 uploadimg.html
-      return "html/uploadImage";
+      return "html/uploadFiles";
     }
 
-    @RequestMapping(value = "/uploadImage", method = RequestMethod.POST)
+    @RequestMapping(value = "/uploadFile", method = RequestMethod.POST)
     public @ResponseBody
-    String uploadImg(@RequestParam("file") MultipartFile file,
+    String uploadImg(@RequestParam("fileName") MultipartFile file,
                      @RequestParam("dirName")String dirName) {
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
-        String filePath ="E:\\demo\\src\\main\\resources\\static\\uploadImages\\";
+        String filePath ="E:\\demo\\src\\main\\resources\\static\\uploadFiles\\";
         if(dirName.length()!=0){
             filePath+=dirName+"\\";
         }

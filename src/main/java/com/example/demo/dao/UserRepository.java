@@ -13,7 +13,8 @@ import javax.transaction.Transactional;
 
 @Repository
 @Qualifier("userRepository")
-public interface UserRepository extends PagingAndSortingRepository<User,Integer>,CrudRepository<User,Integer>{
+public interface UserRepository extends PagingAndSortingRepository<User,Integer>,
+        CrudRepository<User,Integer>{
     public User findUserById(Integer id);
     public User findUserByNickName(String nickName);
     public User findUserByPassword(String password);
