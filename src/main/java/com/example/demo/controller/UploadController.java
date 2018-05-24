@@ -23,9 +23,9 @@ public class UploadController {
                      @RequestParam("dirName")String dirName) {
         String contentType = file.getContentType();
         String fileName = file.getOriginalFilename();
-        String filePath ="E:\\demo\\src\\main\\resources\\static\\uploadFiles\\";
-        if(dirName.length()!=0){
-            filePath+=dirName+"\\";
+        String filePath ="E:\\demo\\src\\main\\resources\\static\\";
+        if(dirName.trim().length()!=0){
+            filePath+=dirName.trim()+"\\";
         }
         try {
             FileUtil.uploadFile(file.getBytes(), filePath, fileName);

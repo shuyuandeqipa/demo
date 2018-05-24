@@ -5,6 +5,14 @@
     <title>Competition upload files </title>
 </head>
 <body>
-
+<form enctype="multipart/form-data" method="post" action="/uploadFile">
+    <br><br>
+    需要上传的文件：<input type="file" name="fileName"/>
+    <input type="submit" value=" 上     传 "/>
+    <br>
+    <br>例如：
+    <br>需要上传的文件:1.jpg
+    <br>保存到服务器的图片的路径是：E:\demo\src\main\resources\static\uploadImages\competitionImages\1.jpg
+</form>
 </body>
 </html>
