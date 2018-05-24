@@ -5,6 +5,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.Set;
 
 @Setter
@@ -19,7 +20,7 @@ public class Competition {
     private Integer id;
 
     private String competitionName;
-    private String competitionDate;
+    private java.sql.Date competitionDate;
     private String competitionAbstract;//赛事的简介
     private String competitionImageName;//默认放在数据库的static下面的competitionImages下面
     private Integer competitionAmountOfThumbUp;//赛事的点赞量

@@ -16,6 +16,7 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @EnableJpaRepositories(basePackages = "com.example.demo")
 @EntityScan(basePackages = "com.example")
 @Slf4j
+@EnableCaching
 public class DemoApplication {
 
 	public static void main(String[] args) {
