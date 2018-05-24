@@ -23,11 +23,13 @@ public class CompetitionController {
     @ResponseBody
     @GetMapping("/competitionInfo")//返回一个赛事的json信息
     public String competitionInfo(@RequestParam(value = "id",defaultValue = "0")Integer id) {
+        if(id==0)return "";
       return this.service.getCompetitionJsonInfoById(id);
     }
     @ResponseBody
     @GetMapping("/competitionImage")//返回的是图片的base64编码，在Android端解析一下就可以了
     public String competitionImage(@RequestParam(value = "competitionImageName",defaultValue = "")String competitionImageName){
+        if(competitionImageName.trim()=="")return "";
         return this.service.getCompetitionImageBase64StringByImagePathInServer(competitionImageName);
     }
 
@@ -42,14 +44,14 @@ public class CompetitionController {
                                          @RequestParam(value = "competitionRewards",defaultValue = "")String competitionRewards,
                                         @RequestParam(value = "competitionDemands",defaultValue = "")String competitionDemands) {
         Competition competition=new Competition();
-        competition.setCompetitionName(competitionName);
-        String[]dateParse=competitionDate.split("-");
+        competition.setCompetitionName(competitionName.trim());
+        String[]dateParse=competitionDate.trim().split("-");
         competition.setCompetitionDate(new Date(Integer.parseInt(dateParse[0])-1900,Integer.parseInt(dateParse[1])-1,Integer.parseInt(dateParse[2])));
-        competition.setCompetitionAbstract(competitionAbstract);
-        competition.setCompetitionImageName(competitionImageName);
-        competition.setCompetitionSponsor(competitionSponsor);
-        competition.setCompetitionRewards(competitionRewards);
-        competition.setCompetitionDemands(competitionDemands);
+        competition.setCompetitionAbstract(competitionAbstract.trim());
+        competition.setCompetitionImageName(competitionImageName.trim());
+        competition.setCompetitionSponsor(competitionSponsor.trim());
+        competition.setCompetitionRewards(competitionRewards.trim());
+        competition.setCompetitionDemands(competitionDemands.trim());
        boolean isok=this.service.saveCompetitionInfo(competition);
        //把图片保存到指定的文件夹中
         String savePath= ApplicationConfig.competitionImageSavePath;
